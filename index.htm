@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mara!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .name-highlight {
+            font-family: 'Dancing Script', cursive;
+            color: #ffd700;
+            font-size: 1.3em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            opacity: 0.7;
+            animation: fall 5s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .content {
+            padding: 3rem;
+        }
+        
+        .message {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .message p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .qualities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .quality-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: calc(50% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .quality-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quality-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .wishes {
+            background: #f0f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .wishes h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .quality-card {
+                width: 100%;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Confetti colors */
+        .confetti:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            background-color: #ff9ff3;
+        }
+        
+        .confetti:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+            background-color: #feca57;
+        }
+        
+        .confetti:nth-child(3) {
+            left: 30%;
+            animation-delay: 2s;
+            background-color: #ff6b6b;
+        }
+        
+        .confetti:nth-child(4) {
+            left: 40%;
+            animation-delay: 3s;
+            background-color: #48dbfb;
+        }
+        
+        .confetti:nth-child(5) {
+            left: 50%;
+            animation-delay: 4s;
+            background-color: #1dd1a1;
+        }
+        
+        .confetti:nth-child(6) {
+            left: 60%;
+            animation-delay: 0.5s;
+            background-color: #f368e0;
+        }
+        
+        .confetti:nth-child(7) {
+            left: 70%;
+            animation-delay: 1.5s;
+            background-color: #ff9ff3;
+        }
+        
+        .confetti:nth-child(8) {
+            left: 80%;
+            animation-delay: 2.5s;
+            background-color: #feca57;
+        }
+        
+        .confetti:nth-child(9) {
+            left: 90%;
+            animation-delay: 3.5s;
+            background-color: #ff6b6b;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s ease infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <h1>Happy Birthday <span class="name-highlight">Mara</span>!</h1>
+            <p>Celebrating you and all the amazing things you bring to this world</p>
+        </div>
+        
+        <div class="content">
+            <div class="message">
+                <h2>Another year of <span class="name-highlight">Mara</span>'s greatness</h2>
+                <p>Lovely <span class="name-highlight">Mara</span>, today isn't just about adding another year to your life, but about celebrating all the incredible things you've accomplished and the wonderful person you've become and you are becoming.</p>
+                <p>You have so much strength, talent, and potential - and this year is going to be another chapter of you achieving great things. <span class="heart">♥</span></p>
+            </div>
+            
+            <div class="qualities">
+                <div class="quality-card">
+                    <h3>Mara's Strength</h3>
+                    <p>I've seen you face challenges head-on with courage that inspires everyone mostly your friends and teachers like mr Nyang. That resilience is one of your superpowers.</p>
+                </div>
+                
+                <div class="quality-card">
+                    <h3>Mara's Mind</h3>
+                    <p>The way you think, solve problems, and approach life is truly remarkable even though there are still much efforts and stuffs to do but i think u shall make it.</p>
+                </div>
+                
+                <div class="quality-card">
+                    <h3>Mara's Growth</h3>
+                    <p>Watching you learn, evolve, and become even more amazing each year has been incredible like in 3 yrs alot has changed and it will surely continue like that in a more better way bro.</p>
+                </div>
+            </div>
+            
+            <div class="wishes">
+                <h3>For Your Year Ahead</h3>
+                <p>May this year bring you closer to your dreams, fill your days with meaningful moments, and surprise you with unexpected joys.</p>
+                <p>May you continue to grow into the incredible person you're becoming, and may you always remember how capable you are and im here to help if needed, <span class="name-highlight">Mara</span>.</p>
+                <p>Happy birthday to You who deserves all the good things coming their way! <span class="heart">♥</span></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Did it with appreciation for the wonderful person you are bro.Keep up</p>
+            <p><span class="heart">♥</span></p>
+        </div>
+    </div>
+    
+    <script>
+        // Add more confetti dynamically
+        function addConfetti() {
+            const header = document.querySelector('.header');
+            for(let i = 0; i < 15; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                header.appendChild(confetti);
+            }
+        }
+        
+        addConfetti();
+    </script>
+</body>
+</html>
