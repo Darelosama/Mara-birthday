@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine 💖</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 90%;
+        max-width: 400px;
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        color: #e6005c;
+    }
+
+    img {
+        width: 200px;
+        margin: 20px 0;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 12px 25px;
+        margin: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    #yesBtn {
+        background-color: #ff3366;
+        color: white;
+    }
+
+    #noBtn {
+        background-color: #cccccc;
+        color: black;
+        position: absolute;
+    }
+
+    /* HEART RAIN */
+    .heart {
+        position: fixed;
+        top: -10px;
+        color: red;
+        font-size: 20px;
+        animation: fall linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Romantic music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>Will you be my Valentine? 💘</h1>
+
+    <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif">
+
+    <br>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
+    <button id="noBtn" onmouseover="moveNo()" onclick="noClicked()">No 🙃</button>
+</div>
+
+<script>
+    let yesSize = 18;
+
+    function noClicked() {
+        yesSize += 10;
+        document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+    }
+
+    function moveNo() {
+        const noBtn = document.getElementById("noBtn");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    function yesClicked() {
+        document.body.innerHTML = `
+        <div style="
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #a1ffce, #faffd1);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        ">
+            <div style="
+                background: white;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            ">
+                <h1 style="color:#28a745;">HURRAY!!! 🥰💖</h1>
+                <h2>Thank you for being my Valentine 💕</h2>
+                <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="220">
+            </div>
+        </div>
+        `;
+    }
+
+    // HEART RAIN FUNCTION
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
